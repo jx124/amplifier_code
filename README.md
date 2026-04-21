@@ -23,5 +23,5 @@ Max value: -0.22005
 	prob: -2.94861
 	counts: 2.72856
 ```
-The grid search maximum value of -0.170517 corresponds to an upper bound of O(0.84^r).
+The grid search maximum value of -0.170517 corresponds to an upper bound of O(0.85^r). Here, the grid search value overestimates the maximum value in any grid point, while the point search value only evaluates the objective function on the grid point.
 
