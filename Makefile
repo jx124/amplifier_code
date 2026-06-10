@@ -1,6 +1,9 @@
 NVCC := /usr/local/cuda/bin/nvcc
 
-all: cuda
+all: amplifiers weighted_amplifiers
 
-cuda: amplifiers_gpu.cu
-	$(NVCC) -std=c++20 -O2 -dlto -arch=sm_86 -ftz=true --expt-relaxed-constexpr -Xcompiler -Wall -o amplifiers_gpu amplifiers_gpu.cu
+amplifiers: amplifiers_gpu.cu
+	$(NVCC) -std=c++20 -O2 -dlto -arch=sm_86 --expt-relaxed-constexpr -Xcompiler -Wall -o amplifiers_gpu amplifiers_gpu.cu
+
+weighted_amplifiers: weighted_amplifiers_gpu.cu
+	$(NVCC) -std=c++20 -O2 -dlto -arch=sm_86 --expt-relaxed-constexpr -Xcompiler -Wall -o weighted_amplifiers_gpu weighted_amplifiers_gpu.cu
